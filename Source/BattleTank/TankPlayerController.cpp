@@ -67,7 +67,6 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 		// Line-trace along that direction
 		return GetLookVectorHitLocation(LookDirection, HitLocation);
 	}
-
 	return false;
 }
 
@@ -80,7 +79,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 				HitResult,
 				StartLocation,
 				EndLocation,
-				ECollisionChannel::ECC_Visibility)				
+				ECollisionChannel::ECC_Camera)				
 		)
 	{
 		HitLocation = HitResult.Location;
